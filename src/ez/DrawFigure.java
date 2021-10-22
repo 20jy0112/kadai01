@@ -14,7 +14,7 @@ public class DrawFigure {
 		EZ.initialize(500, 500); // 画面の大きさを決める．
 
 		//背景色を設定
-		EZ.setBackgroundColor(Color.LIGHT_GRAY);
+		EZ.setBackgroundColor(Color.PINK);
 
 		//線を描く(始点x, 始点y, 終点x, 終点y, 色, 線幅)
 		EZ.addLine(40,0, 40,50, Color.RED, 1);
@@ -27,10 +27,12 @@ public class DrawFigure {
 		int[] xp = {200,300,220,250,290,200};
 		int[] yp = {100,100,200,80,190,100};
 		EZ.addPolygon(xp, yp, Color.MAGENTA, false);
-
+		
 		//イメージを描画 (ファイル名, 中心座標x, 中心座標y)
-		EZ.addImage("src/ez/cat.jpg", 300,300);
-
+		
+		EZImage cat = EZ.addImage("src/ez/cat.jpg", 300,300);
+		cat.turnLeft(30);
+		
 		//文字を描画する(文字列の中心座標x, 文字列の中心座標y, 文字列，色 [,サイズ] )
 		EZ.addText(40,20, "Hello World", Color.BLACK, 12);
 		EZ.addText(300,50, "012あいう漢字", Color.BLACK, 24);
